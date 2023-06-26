@@ -57,19 +57,19 @@ fun myApp(){
             .fillMaxWidth(),
         color = Color(0xFF546E7A)
     ){
-        Column(verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally){
-            Text(text="$ ${moneyCounter.absoluteValue}", style = TextStyle(color = Color.White, fontSize = 30.sp,
-                fontWeight = FontWeight.Bold))
-            //Space
-            Spacer(modifier =Modifier.height(130.dp))
-            CreateCircle(moneyCounter=moneyCounter.absoluteValue){newValue ->
+     Column(verticalArrangement = Arrangement.Center,
+     horizontalAlignment = Alignment.CenterHorizontally){
+         Text(text="$ ${moneyCounter.absoluteValue}", style = TextStyle(color = Color.White, fontSize = 30.sp,
+         fontWeight = FontWeight.Bold))
+         //Space
+         Spacer(modifier =Modifier.height(130.dp))
+         CreateCircle(moneyCounter=moneyCounter.absoluteValue){newValue ->
                 moneyCounter = newValue
-            }
-            if(moneyCounter.absoluteValue>25){
-                Text(text = "Lots Of Money!")
-            }
-        }
+         }
+         if(moneyCounter.absoluteValue>25){
+             Text(text = "Lots Of Money!")
+         }
+     }
 
     }
 }
@@ -110,6 +110,6 @@ fun CreateCircle(moneyCounter : Int = 0,updateMoneyCounter: (Int) -> Unit ){
 @Composable
 fun defaultPreview() {
     MoneyCounterTheme {
-        myApp()
+    myApp()
     }
 }
